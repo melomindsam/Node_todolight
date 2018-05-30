@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 var Todo = require('../models/Todos');
 
-//@GET ==> Todo.getAll et Todo.gatById
+//@GET ==> Todo.getAll et Todo.gatById  
 router.get('/:id?', function(request, response, next){ 
 //Si présence de paramètre on appelle la méthode getById
     if(request.params.id) {
