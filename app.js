@@ -7,6 +7,14 @@ var logger = require('morgan');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
+//Requiert les routes de TodosRoutes
+var Todos = require('./routes/todosRoutes');
+//requiert bodyparser
+var bodyParser = require('body-parser');
+//inclusion des cors
+var cors = require('cors');
+
+
 var app = express();
 
 // view engine setup
@@ -21,6 +29,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('/Todos', Todos); 
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
